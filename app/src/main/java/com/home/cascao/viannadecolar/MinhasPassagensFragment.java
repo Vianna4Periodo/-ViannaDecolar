@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SearchFragment extends Fragment {
+public class MinhasPassagensFragment extends Fragment {
 
-    public SearchFragment() {
-
+    public MinhasPassagensFragment() {
     }
 
-    public static SearchFragment newInstance() {
-        SearchFragment fragment = new SearchFragment();
+    public static MinhasPassagensFragment newInstance() {
+        MinhasPassagensFragment fragment = new MinhasPassagensFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -24,16 +23,12 @@ public class SearchFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        return inflater.inflate(R.layout.fragment_minhas_passagens, container, false);
     }
 
     @Override

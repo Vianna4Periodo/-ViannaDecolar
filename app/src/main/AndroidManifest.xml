@@ -28,7 +28,6 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".MinhasPassagensActivity" />
         <activity android:name=".SearchActivity"></activity>
     </application>
 
