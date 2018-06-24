@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalharPassagemActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Origem:"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:id="@+id/origem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Juiz de Fora"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Destino:"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:id="@+id/destino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="São Paulo"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDark"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Saída:"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:id="@+id/saida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12/12/2018 10:00:00"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chegada:"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:id="@+id/chegada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12/12/2018 10:00:00"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:background="@color/colorDanger"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
