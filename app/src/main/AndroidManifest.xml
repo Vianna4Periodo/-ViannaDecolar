@@ -11,18 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".DetalharPassagemActivity" android:label="Passagem" />
-        <activity android:name=".LoginActivity" android:label="Login" />
-        <activity android:name=".CadastroActivity" android:label="Cadastro" />
-        <activity android:name=".SearchActivity" android:label="Pesquisa"></activity>
+        <activity
+            android:name=".DetalharPassagemActivity"
+            android:label="Passagem" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".CadastroActivity"
+            android:label="Cadastro" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="Pesquisa" />
+        <activity android:name=".ComprarPassagemActivity"></activity>
     </application>
 
 </manifest>

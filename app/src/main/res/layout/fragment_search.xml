@@ -59,6 +59,7 @@
                                         android:textStyle="bold"/>
 
                                     <EditText
+                                        android:id="@+id/origemText"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:hint="Ex: Juiz de Fora"
@@ -78,6 +79,7 @@
                                         android:textStyle="bold"/>
 
                                     <EditText
+                                        android:id="@+id/destinoText"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:hint="Ex: São Paulo"
@@ -107,7 +109,7 @@
                                     android:textStyle="bold"/>
 
                                 <EditText
-                                    android:id="@+id/editText2"
+                                    android:id="@+id/quantidadeText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:ems="10"
@@ -136,7 +138,7 @@
                                     android:textStyle="bold"/>
 
                                 <EditText
-                                    android:id="@+id/editText3"
+                                    android:id="@+id/dataSaidaText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:ems="10"
@@ -164,6 +166,7 @@
                                     android:textStyle="bold"/>
 
                                 <EditText
+                                    android:id="@+id/dataChegadaText"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:hint="Selecione a data de chegada"
@@ -180,7 +183,7 @@
             </android.support.v7.widget.LinearLayoutCompat>
 
             <Button
-                android:id="@+id/searchButton"
+                android:id="@+id/pesquisarButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pesquisar"

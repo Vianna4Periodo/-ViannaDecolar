@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
+    <ListView
+        android:id="@+id/passagensView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/passagem_item_list"
+        android:visibility="gone"></ListView>
+
+    <ProgressBar
+        android:id="@+id/load"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:scaleX="0.15"
+        android:scaleY="0.15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="clip_vertical"/>
+
 </android.support.constraint.ConstraintLayout>

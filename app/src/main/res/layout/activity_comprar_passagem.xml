@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalharPassagemActivity">
+    tools:context=".ComprarPassagemActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -47,7 +47,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -60,6 +61,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="São Paulo"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Valor Passagem:"
+                        android:textColor="@color/colorWhite"/>
+
+                    <TextView
+                        android:id="@+id/valorPassagemText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="R$120"
                         android:textSize="22dp"
                         android:textStyle="bold"
                         android:textColor="@color/colorWhite"/>
@@ -119,12 +141,50 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/cancelButton"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
-                android:background="@color/colorDanger"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cartão de crédito:"/>
+
+                <EditText
+                    android:id="@+id/cartaoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ex: 4929 8331 6479 9284"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valor:"/>
+
+                <EditText
+                    android:id="@+id/valorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ex: 120"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/comprarButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comprar"
+                android:background="@color/colorAction"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
                 android:textSize="20dp"

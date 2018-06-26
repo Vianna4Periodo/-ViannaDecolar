@@ -117,6 +117,7 @@ public class MinhasPassagensFragment extends Fragment {
                 intent.putExtra("destino", passagem.getVoo().getDestino());
                 intent.putExtra("chegada", passagem.getVoo().getDataChegada());
                 intent.putExtra("saida", passagem.getVoo().getDataSaida());
+                intent.putExtra("tipo", 0);
 
                 startActivity(intent);
             }

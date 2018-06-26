@@ -5,9 +5,9 @@ public class VooComprarPassagemRequest {
     private int idVoo;
     private int idCliente;
     private int quantidade;
-    private double pagamento;
+    private int pagamento;
 
-    public VooComprarPassagemRequest(int idVoo, int idCliente, int quantidade, double pagamento) {
+    public VooComprarPassagemRequest(int idVoo, int idCliente, int quantidade, int pagamento) {
         this.idVoo = idVoo;
         this.idCliente = idCliente;
         this.quantidade = quantidade;
@@ -26,7 +26,7 @@ public class VooComprarPassagemRequest {
         return quantidade;
     }
 
-    public double getPagamento() {
+    public int getPagamento() {
         return pagamento;
     }
 
