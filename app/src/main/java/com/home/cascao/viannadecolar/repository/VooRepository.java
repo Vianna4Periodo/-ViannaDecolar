@@ -28,7 +28,7 @@ public final class VooRepository {
         return service.findById(id);
     }
 
-    public Call<Void> comprarPassagem(VooComprarPassagemRequest comprarPassagemRequest) {
+    public Call<VooComprarPassagemResponse> comprarPassagem(VooComprarPassagemRequest comprarPassagemRequest) {
         return service.comprarPassagem(comprarPassagemRequest);
     }
 

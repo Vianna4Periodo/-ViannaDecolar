@@ -26,8 +26,7 @@ public interface VooDataService {
     Call<VooFindByIdResponse> findById(@Path("id") int id);
 
     @POST("voos/comprar-passagem")
-//    Call<VooComprarPassagemResponse> comprarPassagem(@Body VooComprarPassagemRequest comprarPassagemRequest);
-    Call<Void> comprarPassagem(@Body VooComprarPassagemRequest comprarPassagemRequest);
+    Call<VooComprarPassagemResponse> comprarPassagem(@Body VooComprarPassagemRequest comprarPassagemRequest);
 
     @POST("voos/cancelar-passagem")
     Call<Void> cancelarPassagem(@Body VooCancelarPassagemRequest cancelarPassagemRequest);
