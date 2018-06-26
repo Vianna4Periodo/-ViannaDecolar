@@ -94,18 +94,13 @@ public class ComprarPassagemActivity extends AppCompatActivity {
         repository.comprarPassagem(new VooComprarPassagemRequest(id, Utils.getInstance().getCliente().getId(), quantidade, 200)).enqueue(new Callback<VooComprarPassagemResponse>() {
             @Override
             public void onResponse(Call<VooComprarPassagemResponse> call, Response<VooComprarPassagemResponse> response) {
-                if (response.body().getPassagens() == null || response.body().getPassagens().size() == 0) {
-                    Toast.makeText(getApplicationContext(), "Você não pode ir nesse voo poiso mesmo já está lotado.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Passagem comprada com sucesso.", Toast.LENGTH_SHORT).show();
-                }
-
+                Toast.makeText(getApplicationContext(), "Passagem comprada com sucesso.", Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void onFailure(Call<VooComprarPassagemResponse> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Não foi possível comprar, tente novamente mais tarde por favor.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Você não pode ir nesse voo poiso mesmo já está lotado.", Toast.LENGTH_SHORT).show();
             }
         });
     }
