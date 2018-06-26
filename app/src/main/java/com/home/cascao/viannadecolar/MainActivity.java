@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void gotToTab(Tabs reference) {
         viewPage.setCurrentItem(reference.getCode());
+
     }
 
 }

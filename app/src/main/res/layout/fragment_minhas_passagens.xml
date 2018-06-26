@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".MinhasPassagensFragment">
 
-    <ListView
-        android:id="@+id/passagensView"
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/passagem_item_list"
-        android:visibility="gone"></ListView>
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/passagensView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/passagem_item_list"
+            android:visibility="gone"></ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <LinearLayout
         android:id="@+id/loginView"

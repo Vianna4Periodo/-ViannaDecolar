@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class MinhasPassagensFragment extends Fragment {
     private Button loginButton, cadastrarButton;
     private LinearLayout loginView;
     private ListView passagensView;
+    private SwipeRefreshLayout swipeContainer;
 
     private PassagensListAdapter passagensListAdapter = new PassagensListAdapter(new ArrayList<Passagem>());
 
@@ -56,33 +58,7 @@ public class MinhasPassagensFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
-        Cliente cliente = Utils.getInstance().getCliente();
-
-        if (cliente != null && loginView != null) {
-            getActivity().setTitle("Minhas passagens");
-
-            loginView.setVisibility(View.GONE);
-            passagensView.setVisibility(View.VISIBLE);
-
-            ClienteRepository repository = new ClienteRepository();
-            repository.passagens(cliente).enqueue(new Callback<ClientePassagensResponse>() {
-                @Override
-                public void onResponse(Call<ClientePassagensResponse> call, Response<ClientePassagensResponse> response) {
-                    passagensListAdapter.add(response.body().getPassagens());
-                }
-
-                @Override
-                public void onFailure(Call<ClientePassagensResponse> call, Throwable t) {
-                    Toast.makeText(getContext(), "Não foi possível carregar a lista de passagens, tente novamente por favor.", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        } else {
-            getActivity().setTitle("Login");
-        }
-
-        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        loadData();
     }
 
     @Override
@@ -111,6 +87,7 @@ public class MinhasPassagensFragment extends Fragment {
         cadastrarButton = view.findViewById(R.id.cadastrarButton);
         loginView = view.findViewById(R.id.loginView);
         passagensView = view.findViewById(R.id.passagensView);
+        swipeContainer = view.findViewById(R.id.swipeContainer);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,10 +121,52 @@ public class MinhasPassagensFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
+
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
     }
 
-    private void setupList() {
+    private void loadData() {
+        Cliente cliente = Utils.getInstance().getCliente();
 
+        if (cliente != null && loginView != null) {
+            getActivity().setTitle("Minhas passagens");
+
+            swipeContainer.setVisibility(View.VISIBLE);
+            loginView.setVisibility(View.GONE);
+            passagensView.setVisibility(View.VISIBLE);
+
+            ClienteRepository repository = new ClienteRepository();
+            repository.passagens(cliente).enqueue(new Callback<ClientePassagensResponse>() {
+                @Override
+                public void onResponse(Call<ClientePassagensResponse> call, Response<ClientePassagensResponse> response) {
+                    passagensListAdapter.add(response.body().getPassagens());
+                    swipeContainer.setRefreshing(false);
+                }
+
+                @Override
+                public void onFailure(Call<ClientePassagensResponse> call, Throwable t) {
+                    Toast.makeText(getContext(), "Não foi possível carregar a lista de passagens, tente novamente por favor.", Toast.LENGTH_SHORT).show();
+                    swipeContainer.setRefreshing(false);
+
+                }
+            });
+
+        } else {
+            swipeContainer.setVisibility(View.GONE);
+            getActivity().setTitle("Login");
+        }
+
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
 }
