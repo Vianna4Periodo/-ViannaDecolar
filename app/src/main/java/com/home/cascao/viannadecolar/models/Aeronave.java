@@ -5,10 +5,10 @@ import com.google.gson.annotations.SerializedName;
 public class Aeronave {
 
     @SerializedName("createdAt")
-    private int createdAt;
+    private long createdAt;
 
     @SerializedName("updatedAt")
-    private int updatedAt;
+    private long updatedAt;
 
     @SerializedName("id")
     private int id;
@@ -18,15 +18,17 @@ public class Aeronave {
 
     public Aeronave() { }
 
-    public Aeronave(String nome) {
+    public Aeronave(long createdAt, long updatedAt, String nome) {
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.nome = nome;
     }
 
-    public int getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public int getUpdatedAt() {
+    public long getUpdatedAt() {
         return updatedAt;
     }
 

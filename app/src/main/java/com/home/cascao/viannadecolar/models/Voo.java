@@ -2,16 +2,13 @@ package com.home.cascao.viannadecolar.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Voo {
 
     @SerializedName("createdAt")
-    private int createdAt;
+    private long createdAt;
 
     @SerializedName("updatedAt")
-    private int updatedAt;
+    private long updatedAt;
 
     @SerializedName("id")
     private int id;
@@ -34,30 +31,28 @@ public class Voo {
     @SerializedName("capacidadeMaxima")
     private int capacidadeMaxima;
 
-    @SerializedName("aeronave")
-    private Aeronave aeronave;
-
-    @SerializedName("passagens")
-    private List<Passagem> passagens;
+//    @SerializedName("aeronave")
+//    private Aeronave aeronave;
 
     public Voo() { }
 
-    public Voo(String dataSaida, String dataChegada, String destino, String origem, double valor, int capacidadeMaxima, Aeronave aeronave) {
+    public Voo(long createdAt, long updatedAt, String dataSaida, String dataChegada, String destino, String origem, double valor, int capacidadeMaxima) {
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.dataSaida = dataSaida;
         this.dataChegada = dataChegada;
         this.destino = destino;
         this.origem = origem;
         this.valor = valor;
         this.capacidadeMaxima = capacidadeMaxima;
-        this.aeronave = aeronave;
-        this.passagens = new ArrayList<>();
+//        this.aeronave = aeronave;
     }
 
-    public int getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public int getUpdatedAt() {
+    public long getUpdatedAt() {
         return updatedAt;
     }
 
@@ -113,19 +108,12 @@ public class Voo {
         this.capacidadeMaxima = capacidadeMaxima;
     }
 
-    public Aeronave getAeronave() {
-        return aeronave;
-    }
+//    public Aeronave getAeronave() {
+//        return aeronave;
+//    }
+//
+//    public void setAeronave(Aeronave aeronave) {
+//        this.aeronave = aeronave;
+//    }
 
-    public void setAeronave(Aeronave aeronave) {
-        this.aeronave = aeronave;
-    }
-
-    public List<Passagem> getPassagens() {
-        return passagens;
-    }
-
-    public void setPassagens(List<Passagem> passagens) {
-        this.passagens = passagens;
-    }
 }

@@ -6,11 +6,22 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.home.cascao.viannadecolar.adapters.ViewPageAdapter;
 import com.home.cascao.viannadecolar.enums.Tabs;
+import com.home.cascao.viannadecolar.models.request.voo.VooComprarPassagemRequest;
+import com.home.cascao.viannadecolar.models.response.voos.VooComprarPassagemResponse;
+import com.home.cascao.viannadecolar.models.response.voos.VooFindByIdResponse;
+import com.home.cascao.viannadecolar.models.response.voos.VooFindResponse;
+import com.home.cascao.viannadecolar.repository.VooRepository;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 

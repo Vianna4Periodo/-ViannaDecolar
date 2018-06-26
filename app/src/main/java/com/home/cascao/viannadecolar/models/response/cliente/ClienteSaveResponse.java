@@ -8,7 +8,9 @@ public class ClienteSaveResponse {
     @SerializedName("cliente")
     private Cliente cliente;
 
-    public ClienteSaveResponse() { }
+    public ClienteSaveResponse(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public Cliente getCliente() {
         return cliente;

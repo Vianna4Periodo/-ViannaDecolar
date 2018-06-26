@@ -8,10 +8,10 @@ import java.util.List;
 public class Cliente {
 
     @SerializedName("createdAt")
-    private int createdAt;
+    private long createdAt;
 
     @SerializedName("updatedAt")
-    private int updatedAt;
+    private long updatedAt;
 
     @SerializedName("id")
     private int id;
@@ -22,6 +22,9 @@ public class Cliente {
     @SerializedName("email")
     private String email;
 
+    @SerializedName("password")
+    private String password;
+
     @SerializedName("passagens")
     private List<Passagem> passagens;
 
@@ -30,14 +33,13 @@ public class Cliente {
     public Cliente(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        this.passagens = new ArrayList<>();
     }
 
-    public int getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public int getUpdatedAt() {
+    public long getUpdatedAt() {
         return updatedAt;
     }
 
@@ -69,4 +71,11 @@ public class Cliente {
         this.passagens = passagens;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -32,7 +32,7 @@
                 android:textColor="@color/colorDarkGray"/>
 
             <TextView
-                android:id="@+id/origem"
+                android:id="@+id/origemText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Juiz de Fora"
@@ -48,7 +48,7 @@
                 android:textColor="@color/colorDarkGray"/>
 
             <TextView
-                android:id="@+id/destino"
+                android:id="@+id/destinoText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="São Paulo"
@@ -77,7 +77,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/dataSaida"
+                android:id="@+id/dataSaidaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Data saída"
@@ -97,7 +97,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/dataChegada"
+                android:id="@+id/dataChegadaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Data saída"

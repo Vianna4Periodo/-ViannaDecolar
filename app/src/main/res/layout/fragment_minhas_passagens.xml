@@ -5,7 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".MinhasPassagensFragment">
 
+    <ListView
+        android:id="@+id/passagensView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/passagem_item_list"
+        android:visibility="gone"></ListView>
+
     <LinearLayout
+        android:id="@+id/loginView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
