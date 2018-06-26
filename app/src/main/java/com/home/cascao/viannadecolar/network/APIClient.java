@@ -9,6 +9,7 @@ public class APIClient {
 
     public static Retrofit getInstance() {
         Session session = new DefaultSession();
+//        Session session = new LocalSession();
         return APIClient.getRetrofitInstance(session);
     }
 
